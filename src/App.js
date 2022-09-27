@@ -1,15 +1,15 @@
 import React,{useState}  from "react";
 import TextForm  from "./TextForm";
 import NavBar  from "./NavBar";
-import About  from "./About";
+//import About  from "./About";
 import Alert from "./Alert";
 // import { useState } from "react/cjs/react.production.min";
-import {
-  BrowserRouter ,
- Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter ,
+//  Routes,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 function App() {
   let [mode,setMode]=useState("light");
@@ -50,16 +50,26 @@ function App() {
     }
   }
   return (
-    < BrowserRouter>
+    <>
     <NavBar title="TextUtils" mode={mode}  toggleMode={toggleMode}  toggleMode2={toggleMode2} />
     <Alert alert={alert}/>
     <div className="container">
-    <Routes>
-        <Route exact path="/about" element={ <About />}/>
-          <Route exact path="/" element={  <TextForm heading="Enter the Text Below" mode={mode} showAlert={showAlert}/>} />
-      </Routes> 
+    <TextForm heading="Enter the Text Below" mode={mode} showAlert={showAlert}/>
     </div>
-    </ BrowserRouter>
+    </>
+    // < BrowserRouter>
+    // <>
+    // <NavBar title="TextUtils" mode={mode}  toggleMode={toggleMode}  toggleMode2={toggleMode2} />
+    // <Alert alert={alert}/>
+    // <div className="container">
+    // {/* <Routes> */}
+    //     {/* <Route exact path="/about" element={ <About />}/> */}
+    //     <TextForm heading="Enter the Text Below" mode={mode} showAlert={showAlert}/>
+    //       {/* <Route exact path="/" element={  <TextForm heading="Enter the Text Below" mode={mode} showAlert={showAlert}/>} />
+    //   </Routes>  */}
+    // </div>
+    // </>
+    // </ BrowserRouter>
   );
 }
  

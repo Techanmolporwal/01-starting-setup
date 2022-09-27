@@ -21,7 +21,7 @@ function TextForm(props){
 
     function handleOnCapital(event){
        let ch=text.split(" ")
-       let chn;
+      
     function top(ch){
         return ch.map(element=>{
             return  element.charAt(0).toUpperCase()+element.slice(1)
